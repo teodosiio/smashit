@@ -151,8 +151,10 @@ function show(i){
   c.s.forEach(function(s,k){
     h+='<h3><i>0'+(k+1)+'</i>'+s[0]+'</h3>';
     s[1].forEach(function(x){
-      h+='<div class="it'+(x[4]?' hl':'')+'"><div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>';
-      if(x[3])h+='<div class="tag '+x[3]+'">'+ic(x[3])+L[x[3]]+'</div>';
+      var isHighlight = x[4] || x[3]==='d';
+      var tagType = (x[3] || (x[4] ? 'd' : ''));
+      h+='<div class="it'+(isHighlight?' hl':'')+'"><div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>';
+      if(tagType)h+='<div class="tag '+tagType+'">'+ic(tagType)+L[tagType]+'</div>';
       if(x[2])h+='<p>'+x[2]+'</p>';
       h+='</div>';
     });
