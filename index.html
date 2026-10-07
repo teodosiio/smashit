@@ -1,220 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menu digital do Smash'It - Fundão. Hamburgueres smash, batatas, entradas, panquecas, sobremesas e bebidas.">
-  <meta name="theme-color" content="#e50914">
-  <title>Smash'It — Fundão | Menu Digital</title>
-  <link rel="icon" href="assets/logo.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smash'It — Fundão · Menu Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff8e9;--red:#e50914;--red2:#c90b13;--yel:#ffd34d;--ink:#211b18;--mut:#776c63;--line:#e5d9c7;--hot:#fff0bd;--hot2:#ffe39a;--green:#3d7048;--safe:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;max-width:520px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:20;background:var(--red);padding:calc(env(safe-area-inset-top,0px) + 13px) 18px 13px;display:flex;align-items:center;gap:11px;box-shadow:0 2px 12px rgba(30,15,5,.16)}
+.brand-logo{width:46px;height:46px;border-radius:7px;object-fit:cover;display:block;flex:none}
+.bar h1{font:800 24px/1 'Barlow Condensed',sans-serif;color:#fff;letter-spacing:.01em;white-space:nowrap}
+.bar small{display:block;margin-top:3px;font-size:9px;font-weight:700;letter-spacing:.12em;color:#ffe9c7}
+nav{position:sticky;top:62px;z-index:15;display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;padding:10px 14px;background:#fffdf7;border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(35,20,10,.06);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;font:700 12px Inter,sans-serif;color:var(--ink);background:#f5ecdc;border:0;border-radius:999px;padding:9px 13px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected=true]{background:var(--red);color:#fff;font-weight:800}
+main{padding:0 16px 34px}
+.leg{display:flex;gap:14px;padding:13px 2px 8px;font-size:10px;font-weight:600;color:var(--mut);overflow-x:auto;white-space:nowrap}
+.leg span,.tag{display:inline-flex;align-items:center;gap:4px}.leg .p{color:var(--red)}.leg .v{color:var(--green)}
+svg.i{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.idx{display:flex;justify-content:space-between;align-items:center;padding:9px 2px 0;font-size:9px;font-weight:700;letter-spacing:.05em}.idx b{color:var(--red)}.idx span{color:var(--mut)}
+h2{font:800 46px/.92 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:7px 0 14px}
+h3{display:flex;align-items:center;gap:9px;color:var(--red);border-bottom:2px solid var(--red);padding:18px 0 8px;font:800 27px/1.02 'Barlow Condensed',sans-serif;text-transform:uppercase}
+h3 i{font:700 9px Inter,sans-serif;font-style:normal;letter-spacing:.05em}
+.it{padding:13px 5px 14px;border-bottom:1px solid var(--line);min-height:58px}.it.hl{background:var(--hot);margin:0 -5px;padding-left:10px;padding-right:10px;border-radius:5px}
+.row{display:flex;align-items:flex-start;gap:12px;font-family:'Barlow Condensed',sans-serif;font-weight:800}.row span:first-child{flex:1;font-size:22px;line-height:1.03}.row span:last-child{font-size:23px;line-height:1;color:var(--red);white-space:nowrap}
+.tag{margin-top:7px;padding:3px 6px;border-radius:3px;font-size:9px;font-weight:700}.tag.d{background:var(--yel);color:var(--ink)}.tag.p{background:#ffd8d2;color:var(--red)}.tag.v{background:#e3eedf;color:var(--green)}
+.it p{margin-top:6px;font-size:11px;line-height:1.45;color:var(--mut);max-width:96%}
+footer{margin-top:8px;background:var(--red);color:#fff;padding:24px 20px calc(var(--safe) + 25px)}footer div{display:flex;align-items:center;gap:10px;font:800 23px 'Barlow Condensed',sans-serif;color:var(--yel)}.footer-logo{width:43px;height:43px;border-radius:6px;object-fit:cover;display:block;flex:none}footer a{display:block;margin-top:13px;font-size:12px;font-weight:700;color:#fff;text-decoration:none}footer p{margin-top:9px;font-size:9px;line-height:1.45;color:#ffe9d1}
+@media (min-width:521px){body{box-shadow:0 0 30px rgba(0,0,0,.08)}}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-glow"></div>
-    <img class="logo" src="assets/logo.png" alt="Smash'It - Fundão">
-    <div class="hero-copy">
-      <span class="eyebrow">FUNDÃO • MENU DIGITAL</span>
-      <h1>Smash'It</h1>
-      <p>Smash burgers, batatas, entradas, panquecas, sobremesas e muito mais.</p>
-      <a class="instagram-btn" href="https://www.instagram.com/smashit.oficial/?hl=en" target="_blank" rel="noopener noreferrer">
-        <span>Instagram</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </header>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="p" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+<symbol id="d" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+<symbol id="v" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+</defs></svg>
 
-  <nav class="tabs" aria-label="Categorias do menu">
-    <button class="tab active" data-tab="burgers">🍔 Smash'It</button>
-    <button class="tab" data-tab="batatas">🍟 Batatas & Entradas</button>
-    <button class="tab" data-tab="doces">🥞 Doces & Panquecas</button>
-    <button class="tab" data-tab="bebidas">🥤 Bebidas</button>
-    <button class="tab" data-tab="extras">➕ Extras</button>
-  </nav>
+<header class="bar"><img class="brand-logo" src="assets/logo.png" alt="Smash'It"><div><h1>Smash'It — Fundão</h1><small>MENU DIGITAL</small></div></header>
+<nav id="nav" role="tablist"></nav>
+<main id="menu"></main>
+<footer>
+<div><img class="footer-logo" src="assets/logo.png" alt="Smash'It">Smash'It — Fundão</div>
+<a href="https://instagram.com/smashit.oficial" target="_blank" rel="noopener">@smashit.oficial ↗</a>
+<p>Menu digital • preços conforme o menu fornecido</p>
+</footer>
 
-  <main>
-    <section class="legend-wrap">
-      <div class="legend">
-        <span><b class="emoji">🔥</b> Picante</span>
-        <span><b class="emoji">🏅</b> Destaque</span>
-        <span><b class="emoji">🌱</b> Vegetariano</span>
-      </div>
-    </section>
-
-    <section id="burgers" class="tab-panel active" aria-labelledby="burgers-tab">
-      <div class="section-heading">
-        <span>01</span><h2>Smash The Price</h2>
-      </div>
-      <div class="menu-grid">
-        <article class="menu-card">
-          <div><h3>Smash Classic</h3><span class="price">4,20€</span></div>
-          <p>Pão brioche, smash burger, queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.</p>
-        </article>
-        <article class="menu-card">
-          <div><h3>Smash Bacon</h3><span class="price">5,60€</span></div>
-          <p>Pão brioche, smash burger, queijo cheddar, bacon, pickles, cebola roxa e molho Smash'It.</p>
-        </article>
-        <article class="menu-card">
-          <div><h3>Crispy Bacon</h3><span class="price">6,50€</span></div>
-          <p>Pão brioche, crispy chicken burger, bacon, alface e molho Smash'It.</p>
-        </article>
-        <article class="menu-card">
-          <div><h3>Smash Classic Veggie <span class="tag">🌱</span></h3><span class="price">6,50€</span></div>
-          <p>Pão brioche, veggie burger, queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.</p>
-        </article>
-      </div>
-
-      <div class="section-heading second">
-        <span>02</span><h2>Smash The Pleasure</h2>
-      </div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Double Cheddar</h3><span class="price">8,00€</span></div><p>Pão brioche, 2x smash burger, 2x queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.</p></article>
-        <article class="menu-card"><div><h3>Double Cheddar Bacon <span class="tag">🏅</span></h3><span class="price">9,20€</span></div><p>Pão brioche, 2x smash burger, 2x queijo cheddar, 2x bacon, pickles, cebola roxa e molho Smash'It.</p></article>
-        <article class="menu-card featured"><div><h3>Smash'It <span class="tag">🏅</span></h3><span class="price">9,95€</span></div><p>Pão brioche, 2x smash burger, 2x queijo cheddar, ovo, bacon, alface, tomate, cebola roxa, ketchup, maionese e mostarda.</p></article>
-        <article class="menu-card featured"><div><h3>OG Smash <span class="tag">🏅</span></h3><span class="price">9,95€</span></div><p>Pão brioche, 2x smash burger, 2x queijo cheddar, cebola caramelizada, bacon, alface, tomate, pickles e molho Smash'It.</p></article>
-        <article class="menu-card"><div><h3>EggIt</h3><span class="price">9,30€</span></div><p>Pão brioche, 2x smash burger, 2x queijo cheddar, ovo, alface, tomate e molho de alho.</p></article>
-        <article class="menu-card"><div><h3>Crispy'It</h3><span class="price">8,95€</span></div><p>Pão brioche, crispy chicken burger, queijo cheddar, bacon, cebola crispy, alface, tomate e molho de alho.</p></article>
-        <article class="menu-card hot"><div><h3>Crispy Fire <span class="tag">🔥</span></h3><span class="price">8,95€</span></div><p>Pão brioche, crispy chicken burger, queijo cheddar, jalapeños, sweet chilli, cebola crispy, alface, tomate e molho spicy.</p></article>
-        <article class="menu-card"><div><h3>Smash'It Veggie <span class="tag">🌱</span></h3><span class="price">11,00€</span></div><p>Pão brioche, 2x veggie burger, 2x queijo cheddar, ovo, alface, tomate, cebola roxa, ketchup, maionese e mostarda.</p></article>
-        <article class="menu-card"><div><h3>Double Cheddar Veggie <span class="tag">🌱</span></h3><span class="price">9,95€</span></div><p>Pão brioche, 2x veggie burger, 2x queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.</p></article>
-      </div>
-    </section>
-
-    <section id="batatas" class="tab-panel" aria-labelledby="batatas-tab">
-      <div class="section-heading"><span>01</span><h2>Batatas Fritas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Batata Frita</h3><span class="price">2,50€</span></div></article>
-        <article class="menu-card"><div><h3>Batata Doce <span class="tag">🏅</span></h3><span class="price">3,50€</span></div></article>
-        <article class="menu-card"><div><h3>Batatas c/ Especiarias</h3><span class="price">3,00€</span></div><p>Tempero à base de paprika, cebola e alho em pó.</p></article>
-        <article class="menu-card"><div><h3>Batata Frita c/ Cheddar, Bacon e Cebola Crispy <span class="tag">🏅</span></h3><span class="price">4,50€</span></div><p>Aconselhado para 2 pax.</p></article>
-        <article class="menu-card hot"><div><h3>Batata Frita c/ Cheddar, Jalapeños e Cebola Crispy <span class="tag">🔥</span></h3><span class="price">4,50€</span></div><p>Aconselhado para 2 pax.</p></article>
-        <article class="menu-card featured"><div><h3>Batata Smash'It</h3><span class="price">7,00€</span></div><p>Batata frita e batata doce, ovo estrelado, bacon, cebola caramelizada, cheddar, molho de alho e cebola crispy. Aconselhado para 2 pax.</p></article>
-      </div>
-
-      <div class="section-heading second"><span>02</span><h2>Entradas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Asinhas de Frango 4x</h3><span class="price">3,90€</span></div></article>
-        <article class="menu-card hot"><div><h3>Asinhas de Frango Sweet Chilli 4x <span class="tag">🔥</span></h3><span class="price">4,90€</span></div></article>
-        <article class="menu-card"><div><h3>Asinhas de Frango Teriyaki 4x</h3><span class="price">4,90€</span></div></article>
-        <article class="menu-card"><div><h3>Aros de Cebola 4x</h3><span class="price">2,90€</span></div></article>
-        <article class="menu-card"><div><h3>Mozzarella Fingers 4x <span class="tag">🏅</span></h3><span class="price">3,60€</span></div></article>
-        <article class="menu-card"><div><h3>Chicken Fingers 2x</h3><span class="price">2,90€</span></div></article>
-        <article class="menu-card"><div><h3>Nuggets 4x</h3><span class="price">3,00€</span></div></article>
-        <article class="menu-card hot"><div><h3>Cheddar Jalapeños 3x <span class="tag">🔥</span></h3><span class="price">3,50€</span></div></article>
-        <article class="menu-card"><div><h3>Mac & Cheese Bites 4x</h3><span class="price">3,60€</span></div></article>
-        <article class="menu-card"><div><h3>Smash'It Mix</h3><span class="price">4,50€</span></div><p>2 aros de cebola, 2 chicken fingers e 2 mac & cheese bites.</p></article>
-        <article class="menu-card"><div><h3>Asinhas Mix</h3><span class="price">5,50€</span></div><p>2 asinhas, 2 asinhas sweet chilli e 2 asinhas teriyaki.</p></article>
-      </div>
-    </section>
-
-    <section id="doces" class="tab-panel" aria-labelledby="doces-tab">
-      <div class="section-heading"><span>01</span><h2>Sobremesas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Tarte Daim com Gelado</h3><span class="price">4,20€</span></div><p>Chocolate Daim, amêndoas e caramelo.</p></article>
-        <article class="menu-card"><div><h3>Tarte Milka com Gelado</h3><span class="price">4,20€</span></div><p>Chocolate Milka com nozes.</p></article>
-        <article class="menu-card"><div><h3>Cheesecake</h3><span class="price">3,70€</span></div></article>
-        <article class="menu-card"><div><h3>Churros com Nutella</h3><span class="price">5,00€</span></div><p>6 unidades.</p></article>
-        <article class="menu-card"><div><h3>Brookie com Bola de Gelado</h3><span class="price">4,20€</span></div></article>
-      </div>
-
-      <div class="section-heading second"><span>02</span><h2>Açaí</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Açaí 200ml</h3><span class="price">4,95€</span></div></article>
-        <article class="menu-card"><div><h3>Açaí 500ml</h3><span class="price">7,95€</span></div><p><strong>4 toppings sólidos:</strong> granola, fruta mix, coco laminado, leite em pó.<br><strong>1 topping líquido:</strong> leite condensado, morango, chocolate ou caramelo.</p></article>
-      </div>
-
-      <div class="section-heading second"><span>03</span><h2>Gelados</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Gelado Kinder Bueno</h3><span class="price">4,30€</span></div><p>2 bolas de gelado Kinder Bueno e chocolate Kinder.</p></article>
-        <article class="menu-card"><div><h3>Gelado Oreo</h3><span class="price">4,30€</span></div><p>2 bolas de gelado Oreo e bolacha Oreo.</p></article>
-        <article class="menu-card"><div><h3>Bola de Gelado</h3><span class="price">1,60€</span></div><p>Morango, caramelo, baunilha, chocolate, lima ou pistacho.</p></article>
-      </div>
-
-      <div class="section-heading second"><span>04</span><h2>Panquecas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Panqueca Dupla Simples</h3><span class="price">4,50€</span></div><p>Panqueca dupla com açúcar e canela.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Nutella e Fruta</h3><span class="price">7,50€</span></div><p>Panqueca dupla com Nutella, fruta mix, pepitas de chocolate, açúcar em pó e canela.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Kinder Bueno</h3><span class="price">7,50€</span></div><p>Panqueca dupla com creme Kinder Bueno, banana, chocolate Kinder Bueno, leite condensado e açúcar em pó.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Oreo</h3><span class="price">7,50€</span></div><p>Panqueca dupla com creme Oreo, bolacha Oreo, banana, leite condensado e açúcar em pó.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Lotus Biscoff</h3><span class="price">7,50€</span></div><p>Panqueca dupla com creme Lotus, bolacha Lotus, banana, Biscoff triturado, caramelo e açúcar em pó.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Manteiga de Amendoim</h3><span class="price">7,50€</span></div><p>Panqueca dupla com manteiga de amendoim, banana, crocante de amendoim, mel, canela e açúcar em pó.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Açaí</h3><span class="price">8,90€</span></div><p>Panqueca dupla com açaí, granola, fruta mix, leite em pó, coco laminado, leite condensado e açúcar em pó.</p></article>
-      </div>
-
-      <div class="section-heading second"><span>05</span><h2>Panquecas Salgadas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Panqueca Sweet Bacon</h3><span class="price">7,00€</span></div><p>Panqueca dupla, ovo estrelado, cheddar, bacon, cebola crispy e mel.</p></article>
-        <article class="menu-card"><div><h3>Panqueca Chicken Royal</h3><span class="price">8,50€</span></div><p>Panqueca dupla, ovo estrelado, chicken burger, molho de alho, cheddar melt, bacon e cebola crispy.</p></article>
-      </div>
-    </section>
-
-    <section id="bebidas" class="tab-panel" aria-labelledby="bebidas-tab">
-      <div class="section-heading"><span>01</span><h2>Bebidas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Refrigerante 33cl</h3><span class="price">2,00€</span></div><p>Pepsi, Pepsi Max, Ice Tea, Sumol, Compal, 7UP.</p></article>
-        <article class="menu-card"><div><h3>Refrigerante 1,5L</h3><span class="price">3,90€</span></div></article>
-        <article class="menu-card"><div><h3>Frize 25cl</h3><span class="price">1,60€</span></div></article>
-        <article class="menu-card"><div><h3>Água Tónica 20cl</h3><span class="price">1,60€</span></div></article>
-        <article class="menu-card"><div><h3>Água 33cl</h3><span class="price">1,00€</span></div></article>
-        <article class="menu-card"><div><h3>Água 1,5L</h3><span class="price">1,90€</span></div></article>
-        <article class="menu-card"><div><h3>Red Bull 25cl</h3><span class="price">2,40€</span></div></article>
-        <article class="menu-card"><div><h3>Super Bock 33cl</h3><span class="price">1,50€</span></div></article>
-        <article class="menu-card"><div><h3>Super Bock Imperial</h3><span class="price">1,30€</span></div></article>
-        <article class="menu-card"><div><h3>Super Bock Caneca 50cl</h3><span class="price">2,50€</span></div></article>
-        <article class="menu-card"><div><h3>Super Bock Stout 33cl</h3><span class="price">2,00€</span></div></article>
-        <article class="menu-card"><div><h3>Super Bock Abadia 33cl</h3><span class="price">2,00€</span></div></article>
-        <article class="menu-card"><div><h3>Somersby 33cl</h3><span class="price">2,30€</span></div></article>
-        <article class="menu-card"><div><h3>Iced Caramel Macchiato</h3><span class="price">3,30€</span></div></article>
-        <article class="menu-card"><div><h3>Cappuccino</h3><span class="price">1,90€</span></div></article>
-        <article class="menu-card"><div><h3>Café</h3><span class="price">0,95€</span></div></article>
-      </div>
-
-      <div class="section-heading second"><span>02</span><h2>Sangria, Vinhos e Bebidas Brancas</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div><h3>Sangria Branca 1,5L</h3><span class="price">9,90€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Qt. Termos Tinto DOC 75cl</h3><span class="price">8,50€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Qt. Termos Branco DOC 75cl</h3><span class="price">8,50€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Qt. Termos Tinto Reserva do Patrão 75cl</h3><span class="price">14,00€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Qt. Termos Branco Reserva 75cl</h3><span class="price">11,00€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Mateus Rosé 75cl</h3><span class="price">8,50€</span></div></article>
-        <article class="menu-card"><div><h3>Vinho Casa Garcia Verde 75cl</h3><span class="price">8,50€</span></div></article>
-        <article class="menu-card"><div><h3>Gin Tonic</h3><span class="price">7,50€</span></div></article>
-        <article class="menu-card"><div><h3>Moscow Mule</h3><span class="price">9,00€</span></div></article>
-        <article class="menu-card"><div><h3>Cuba Libre</h3><span class="price">9,00€</span></div></article>
-        <article class="menu-card"><div><h3>Whiskey Ginger</h3><span class="price">9,00€</span></div></article>
-        <article class="menu-card"><div><h3>Martini</h3><span class="price">4,00€</span></div></article>
-        <article class="menu-card"><div><h3>Licor Beirão</h3><span class="price">4,00€</span></div></article>
-        <article class="menu-card"><div><h3>Whiskey</h3><span class="price">4,00€</span></div></article>
-      </div>
-    </section>
-
-    <section id="extras" class="tab-panel" aria-labelledby="extras-tab">
-      <div class="section-heading"><span>01</span><h2>Extras</h2></div>
-      <div class="menu-grid">
-        <article class="menu-card featured"><div><h3>Bebida + Acompanhamento</h3><span class="price">3,25€</span></div><p>Batata frita, 4 nuggets ou 4 aros de cebola.</p></article>
-        <article class="menu-card"><div><h3>Batata com Especiarias</h3><span class="price">+0,50€</span></div></article>
-        <article class="menu-card"><div><h3>Batata Doce</h3><span class="price">+1,00€</span></div></article>
-        <article class="menu-card"><div><h3>Batata Cheddar, Bacon e Cebola Crispy</h3><span class="price">+1,80€</span></div></article>
-        <article class="menu-card hot"><div><h3>Batata Cheddar, Jalapeños e Cebola Crispy <span class="tag">🔥</span></h3><span class="price">+1,80€</span></div></article>
-        <article class="menu-card"><div><h3>Extra Smash Burger ou Chicken Burger</h3><span class="price">2,00€</span></div></article>
-        <article class="menu-card"><div><h3>Molhos Extra</h3><span class="price">0,80€</span></div><p>Ketchup, maionese, mostarda.</p></article>
-        <article class="menu-card"><div><h3>Molhos Especiais</h3><span class="price">1,10€</span></div><p>Sweet chilli, molho Smash'It, cheddar, spicy, teriyaki, molho de alho.</p></article>
-        <article class="menu-card"><div><h3>Extra Ingrediente</h3><span class="price">1,20€</span></div><p>Bacon, queijo cheddar, ovo, cebola caramelizada.</p></article>
-        <article class="menu-card"><div><h3>Extra Ingrediente</h3><span class="price">1,00€</span></div><p>Jalapeños, cebola crispy.</p></article>
-        <article class="menu-card"><div><h3>Extra Ingrediente</h3><span class="price">0,90€</span></div><p>Alface, tomate, cebola roxa, pickles.</p></article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <img src="assets/logo.png" alt="" class="footer-logo">
-    <div>
-      <strong>Smash'It — Fundão</strong>
-      <p>Menu digital • preços conforme o menu fornecido</p>
-    </div>
-    <a href="https://www.instagram.com/smashit.oficial/?hl=en" target="_blank" rel="noopener noreferrer">@smashit.oficial ↗</a>
-  </footer>
-
-  <script src="script.js"></script>
+<script>
+// item: [nome, preço, descrição, etiqueta (p=picante, d=destaque, v=vegetariano), destacado]
+var D=[
+{n:"Smash'It",t:"Smash'It burgers",c:13,s:[
+["Smash The Price",[
+["Smash Classic","4,20€","Pão brioche, smash burger, queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda."],
+["Smash Bacon","5,60€","Pão brioche, smash burger, queijo cheddar, bacon, pickles, cebola roxa e molho Smash'It."],
+["Crispy Bacon","6,50€","Pão brioche, crispy chicken burger, bacon, alface e molho Smash'It."],
+["Smash Classic Veggie","6,50€","Pão brioche, veggie burger, queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.","v"]]],
+["Smash The Pleasure",[
+["Double Cheddar","8,00€","Pão brioche, 2x smash burger, 2x queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda."],
+["Double Cheddar Bacon","9,20€","Pão brioche, 2x smash burger, 2x queijo cheddar, 2x bacon, pickles, cebola roxa e molho Smash'It.","d"],
+["Smash'It","9,95€","Pão brioche, 2x smash burger, 2x queijo cheddar, ovo, bacon, alface, tomate, cebola roxa, ketchup, maionese e mostarda.","d",1],
+["OG Smash","9,95€","Pão brioche, 2x smash burger, 2x queijo cheddar, cebola caramelizada, bacon, alface, tomate, pickles e molho Smash'It.","d",1],
+["EggIt","9,30€","Pão brioche, 2x smash burger, 2x queijo cheddar, ovo, alface, tomate e molho de alho."],
+["Crispy'It","8,95€","Pão brioche, crispy chicken burger, queijo cheddar, bacon, cebola crispy, alface, tomate e molho de alho."],
+["Crispy Fire","8,95€","Pão brioche, crispy chicken burger, queijo cheddar, jalapeños, sweet chilli, cebola crispy, alface, tomate e molho spicy.","p"],
+["Smash'It Veggie","11,00€","Pão brioche, 2x veggie burger, 2x queijo cheddar, ovo, alface, tomate, cebola roxa, ketchup, maionese e mostarda.","v"],
+["Double Cheddar Veggie","9,95€","Pão brioche, 2x veggie burger, 2x queijo cheddar, pickles, cebola roxa, ketchup, maionese e mostarda.","v"]]]]},
+{n:"Batatas & Entradas",t:"Batatas & Entradas",c:17,s:[
+["Batatas Fritas",[
+["Batata Frita","2,50€"],
+["Batata Doce","3,50€","","d"],
+["Batatas c/ Especiarias","3,00€","Tempero à base de paprika, cebola e alho em pó."],
+["Batata Frita c/ Cheddar, Bacon e Cebola Crispy","4,50€","Aconselhado para 2 pax.","d"],
+["Batata Frita c/ Cheddar, Jalapeños e Cebola Crispy","4,50€","Aconselhado para 2 pax.","p"],
+["Batata Smash'It","7,00€","Batata frita e batata doce, ovo estrelado, bacon, cebola caramelizada, cheddar, molho de alho e cebola crispy. Aconselhado para 2 pax.","",1]]],
+["Entradas",[
+["Asinhas de Frango 4x","3,90€"],
+["Asinhas de Frango Sweet Chilli 4x","4,90€","","p"],
+["Asinhas de Frango Teriyaki 4x","4,90€"],
+["Aros de Cebola 4x","2,90€"],
+["Mozzarella Fingers 4x","3,60€","","d"],
+["Chicken Fingers 2x","2,90€"],
+["Nuggets 4x","3,00€"],
+["Cheddar Jalapeños 3x","3,50€","","p"],
+["Mac & Cheese Bites 4x","3,60€"],
+["Smash'It Mix","4,50€","2 aros de cebola, 2 chicken fingers e 2 mac & cheese bites."],
+["Asinhas Mix","5,50€","2 asinhas, 2 asinhas sweet chilli e 2 asinhas teriyaki."]]]]},
+{n:"Doces & Panquecas",t:"Doces & Panquecas",c:19,s:[
+["Sobremesas",[
+["Tarte Daim com Gelado","4,20€","Chocolate Daim, amêndoas e caramelo."],
+["Tarte Milka com Gelado","4,20€","Chocolate Milka com nozes."],
+["Cheesecake","3,70€"],
+["Churros com Nutella","5,00€","6 unidades."],
+["Brookie com Bola de Gelado","4,20€"]]],
+["Açaí",[
+["Açaí 200ml","4,95€"],
+["Açaí 500ml","7,95€","4 toppings sólidos: granola, fruta mix, coco laminado, leite em pó. 1 topping líquido: leite condensado, morango, chocolate ou caramelo."]]],
+["Gelados",[
+["Gelado Kinder Bueno","4,30€","2 bolas de gelado Kinder Bueno e chocolate Kinder."],
+["Gelado Oreo","4,30€","2 bolas de gelado Oreo e bolacha Oreo."],
+["Bola de Gelado","1,60€","Morango, caramelo, baunilha, chocolate, lima ou pistacho."]]],
+["Panquecas",[
+["Panqueca Dupla Simples","4,50€","Panqueca dupla com açúcar e canela."],
+["Panqueca Nutella e Fruta","7,50€","Panqueca dupla com Nutella, fruta mix, pepitas de chocolate, açúcar em pó e canela."],
+["Panqueca Kinder Bueno","7,50€","Panqueca dupla com creme Kinder Bueno, banana, chocolate Kinder Bueno, leite condensado e açúcar em pó."],
+["Panqueca Oreo","7,50€","Panqueca dupla com creme Oreo, bolacha Oreo, banana, leite condensado e açúcar em pó."],
+["Panqueca Lotus Biscoff","7,50€","Panqueca dupla com creme Lotus, bolacha Lotus, banana, Biscoff triturado, caramelo e açúcar em pó."],
+["Panqueca Manteiga de Amendoim","7,50€","Panqueca dupla com manteiga de amendoim, banana, crocante de amendoim, mel, canela e açúcar em pó."],
+["Panqueca Açaí","8,90€","Panqueca dupla com açaí, granola, fruta mix, leite em pó, coco laminado, leite condensado e açúcar em pó."]]],
+["Panquecas Salgadas",[
+["Panqueca Sweet Bacon","7,00€","Panqueca dupla, ovo estrelado, cheddar, bacon, cebola crispy e mel."],
+["Panqueca Chicken Royal","8,50€","Panqueca dupla, ovo estrelado, chicken burger, molho de alho, cheddar melt, bacon e cebola crispy."]]]]},
+{n:"Bebidas",t:"Bebidas",c:30,s:[
+["Bebidas",[
+["Refrigerante 33cl","2,00€","Pepsi, Pepsi Max, Ice Tea, Sumol, Compal, 7UP."],
+["Refrigerante 1,5L","3,90€"],["Frize 25cl","1,60€"],["Água Tónica 20cl","1,60€"],
+["Água 33cl","1,00€"],["Água 1,5L","1,90€"],["Red Bull 25cl","2,40€"],
+["Super Bock 33cl","1,50€"],["Super Bock Imperial","1,30€"],["Super Bock Caneca 50cl","2,50€"],
+["Super Bock Stout 33cl","2,00€"],["Super Bock Abadia 33cl","2,00€"],["Somersby 33cl","2,30€"],
+["Iced Caramel Macchiato","3,30€"],["Cappuccino","1,90€"],["Café","0,95€"]]],
+["Sangria, Vinhos e Bebidas Brancas",[
+["Sangria Branca 1,5L","9,90€"],["Vinho Qt. Termos Tinto DOC 75cl","8,50€"],["Vinho Qt. Termos Branco DOC 75cl","8,50€"],
+["Vinho Qt. Termos Tinto Reserva do Patrão 75cl","14,00€"],["Vinho Qt. Termos Branco Reserva 75cl","11,00€"],
+["Vinho Mateus Rosé 75cl","8,50€"],["Vinho Casa Garcia Verde 75cl","8,50€"],["Gin Tonic","7,50€"],
+["Moscow Mule","9,00€"],["Cuba Libre","9,00€"],["Whiskey Ginger","9,00€"],["Martini","4,00€"],
+["Licor Beirão","4,00€"],["Whiskey","4,00€"]]]]},
+{n:"Extras",t:"Extras",c:11,s:[
+["Extras",[
+["Bebida + Acompanhamento","3,25€","Batata frita, 4 nuggets ou 4 aros de cebola.","",1],
+["Batata com Especiarias","+0,50€"],["Batata Doce","+1,00€"],
+["Batata Cheddar, Bacon e Cebola Crispy","+1,80€"],
+["Batata Cheddar, Jalapeños e Cebola Crispy","+1,80€","","p"],
+["Extra Smash Burger ou Chicken Burger","2,00€"],
+["Molhos Extra","0,80€","Ketchup, maionese, mostarda."],
+["Molhos Especiais","1,10€","Sweet chilli, molho Smash'It, cheddar, spicy, teriyaki, molho de alho."],
+["Extra Ingrediente","1,20€","Bacon, queijo cheddar, ovo, cebola caramelizada."],
+["Extra Ingrediente","1,00€","Jalapeños, cebola crispy."],
+["Extra Ingrediente","0,90€","Alface, tomate, cebola roxa, pickles."]]]]}
+];
+var L={p:"Picante",d:"Destaque",v:"Vegetariano"};
+function ic(k){return '<svg class="i" aria-hidden="true"><use href="#'+k+'"/></svg>'}
+function show(i){
+  var c=D[i],h='<div class="leg"><span class="p">'+ic('p')+'Picante</span><span>'+ic('d')+'Destaque</span><span class="v">'+ic('v')+'Vegetariano</span></div>';
+  h+='<div class="idx"><b>MENU / 0'+(i+1)+'</b><span>'+c.c+' opções</span></div><h2>'+c.t+'</h2>';
+  c.s.forEach(function(s,k){
+    h+='<h3><i>0'+(k+1)+'</i>'+s[0]+'</h3>';
+    s[1].forEach(function(x){
+      h+='<div class="it'+(x[4]?' hl':'')+'"><div class="row"><span>'+x[0]+'</span><span>'+x[1]+'</span></div>';
+      if(x[3])h+='<div class="tag '+x[3]+'">'+ic(x[3])+L[x[3]]+'</div>';
+      if(x[2])h+='<p>'+x[2]+'</p>';
+      h+='</div>';
+    });
+  });
+  document.getElementById('menu').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('#nav button'),function(b,j){b.setAttribute('aria-selected',j===i)});
+  try{history.replaceState(null,'','#'+i)}catch(e){}
+}
+document.getElementById('nav').innerHTML=D.map(function(c,i){return '<button role="tab" data-i="'+i+'">'+c.n+'</button>'}).join('');
+document.getElementById('nav').addEventListener('click',function(e){var b=e.target.closest('button');if(b){show(+b.dataset.i);window.scrollTo({top:0,behavior:'smooth'})}});
+show(Math.min(Math.max(parseInt(location.hash.slice(1))||0,0),D.length-1));
+</script>
 </body>
 </html>
